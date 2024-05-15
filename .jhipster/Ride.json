@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20240515030606"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "scheduledTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "RideStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SCHEDULED,IN_PROGRESS,COMPLETED,CANCELLED"
+    },
+    {
+      "fieldName": "pickupAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "5"
+    },
+    {
+      "fieldName": "dropoffAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "5"
+    }
+  ],
+  "name": "Ride",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "child",
+      "relationshipName": "child",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "driver",
+      "otherEntityRelationshipName": "ride",
+      "relationshipName": "driver",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

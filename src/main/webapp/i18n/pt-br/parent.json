@@ -1,0 +1,29 @@
+{
+  "sysParentApp": {
+    "parent": {
+      "home": {
+        "title": "Parents",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Parent",
+        "createOrEditLabel": "Criar ou editar Parent",
+        "search": "Pesquisar por Parent",
+        "notFound": "Nenhum Parent encontrado"
+      },
+      "created": "Um novo Parent foi criado com o identificador {{ param }}",
+      "updated": "Um Parent foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Parent foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Parent {{ id }}?"
+      },
+      "detail": {
+        "title": "Parent"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "child": "Child"
+    }
+  }
+}

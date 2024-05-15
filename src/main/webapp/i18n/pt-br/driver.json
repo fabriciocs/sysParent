@@ -1,0 +1,29 @@
+{
+  "sysParentApp": {
+    "driver": {
+      "home": {
+        "title": "Drivers",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Driver",
+        "createOrEditLabel": "Criar ou editar Driver",
+        "search": "Pesquisar por Driver",
+        "notFound": "Nenhum Driver encontrado"
+      },
+      "created": "Um novo Driver foi criado com o identificador {{ param }}",
+      "updated": "Um Driver foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Driver foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Driver {{ id }}?"
+      },
+      "detail": {
+        "title": "Driver"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "licenseNumber": "License Number",
+      "ride": "Ride"
+    }
+  }
+}

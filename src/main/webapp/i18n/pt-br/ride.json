@@ -1,0 +1,30 @@
+{
+  "sysParentApp": {
+    "ride": {
+      "home": {
+        "title": "Rides",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Ride",
+        "createOrEditLabel": "Criar ou editar Ride",
+        "search": "Pesquisar por Ride",
+        "notFound": "Nenhum Ride encontrado"
+      },
+      "created": "Um novo Ride foi criado com o identificador {{ param }}",
+      "updated": "Um Ride foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Ride foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Ride {{ id }}?"
+      },
+      "detail": {
+        "title": "Ride"
+      },
+      "id": "ID",
+      "scheduledTime": "Scheduled Time",
+      "status": "Status",
+      "pickupAddress": "Pickup Address",
+      "dropoffAddress": "Dropoff Address",
+      "child": "Child",
+      "driver": "Driver"
+    }
+  }
+}

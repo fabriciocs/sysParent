@@ -1,0 +1,28 @@
+{
+  "sysParentApp": {
+    "child": {
+      "home": {
+        "title": "Children",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Child",
+        "createOrEditLabel": "Create or edit a Child",
+        "search": "Search for Child",
+        "notFound": "No Children found"
+      },
+      "created": "A new Child is created with identifier {{ param }}",
+      "updated": "A Child is updated with identifier {{ param }}",
+      "deleted": "A Child is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Child {{ id }}?"
+      },
+      "detail": {
+        "title": "Child"
+      },
+      "id": "ID",
+      "name": "Name",
+      "age": "Age",
+      "schoolName": "School Name",
+      "parent": "Parent"
+    }
+  }
+}

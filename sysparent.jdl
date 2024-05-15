@@ -1,0 +1,70 @@
+entity Parent {
+  name String required minlength(3),
+  phone String required pattern(/^[0-9]{10}$/),
+  email String required email,
+  address String maxlength(255)
+}
+
+entity Driver {
+  name String required minlength(3),
+  phone String required pattern(/^[0-9]{10}$/),
+  email String required email,
+  licenseNumber String required minlength(5) maxlength(15)
+}
+
+entity Child {
+  name String required minlength(3),
+  age Integer min(0) max(18),
+  schoolName String required minlength(3) maxlength(100)
+}
+
+entity Ride {
+  scheduledTime ZonedDateTime required,
+  status RideStatus required,
+  pickupAddress String required minlength(5) maxlength(255),
+  dropoffAddress String required minlength(5) maxlength(255)
+}
+
+enum RideStatus {
+  SCHEDULED,
+  IN_PROGRESS,
+  COMPLETED,
+  CANCELLED
+}
+
+relationship OneToMany {
+  Parent{child} to Child{parent(name) required},
+  Driver{ride} to Ride{driver(name) required}
+}
+
+relationship ManyToOne {
+  Ride{child(name) required} to Child
+}
+
+service Parent, Driver, Child, Ride with serviceClass {
+  Parent{create, update, delete, getAll, get},
+  Driver{create, update, delete, getAll, get},
+  Child{create, update, delete, getAll, get},
+  Ride{create, update, delete, getAll, get}
+}
+
+paginate Parent, Driver, Child, Ride with infinite-scroll
+
+dto Parent, Driver, Child, Ride with mapstruct
+
+filter Parent, Driver, Child, Ride
+
+microservice Parent, Driver, Child, Ride with school_transport_service
+
+search * with elasticsearch
+
+// Set up required security roles
+role Admin, User, Driver
+
+// Define role access for each entity
+security {
+  Parent{create, update, delete} to role(Admin, User),
+  Driver{create, update, delete} to role(Admin),
+  Child{create, update, delete} to role(Admin, User),
+  Ride{create, update, delete} to role(Admin, User, Driver)
+}
